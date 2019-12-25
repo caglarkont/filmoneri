@@ -20,7 +20,18 @@ user = client.tododb.user
 
 @app.route('/')
 def anasayfa():
-    return render_template('anasayfa.html')
+     # veri tabanından kayıtları çek, bir listeye al
+    yapilacaklar = []
+    for yap in todo.find():
+        yapilacaklar.append({
+            "_id": str(yap.get("_id")),
+            "filmad": yap.get("filmad"),
+            "filmk": yap.get("filmk"),
+            "filmr": yap.get("filmr")
+        })
+    # index.html'e bu listeyi gönder
+    return render_template('anasayfa.html', yapilacaklar=yapilacaklar)
+        
 
 
 @app.route('/son')

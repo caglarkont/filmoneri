@@ -62,30 +62,24 @@
   <h1>Güncel İstek Listesi</h1>
 </div>
 <div class="container">
-  <div class="w3-container">
-    <table>
-      <thead>
-        <tr class="w3-light-grey w3-hover-red">
-          <th scope="col">Film Yılı</th>
-          <th scope="col">Film İsim</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="w3-hover-black">
-          <th>2005</th>
-          <td>Babam ve Oğlum</td>
-        </tr>
-        <tr class="w3-hover-green">
-          <th>2005</th>
-          <td>Babam ve Oğlum</td>
-        </tr>
-        <tr class="w3-hover-blue">
-          <th>2005</th>
-          <td>Babam ve Oğlum</td>
-        </tr>
-      </tbody>
-    </table>
+  {% for yap in yapilacaklar %}
+  <br />
+  <br />
+  <br />
+
+  <div class="w3-card-4 w3-black">
+    <div class="w3-container w3-center">
+      <h3>{{ yap.get('filmad') }}</h3>
+      <br />
+      <img src="{{ yap.get('filmr') }}" alt="Avatar" style="width:50%" />
+      <br />
+      <h4>{{ yap.get('filmk') }}</h4>
+    </div>
   </div>
+  <br />
+  <br />
+  <br />
+  {% endfor %}
 </div>
 
 <script>
