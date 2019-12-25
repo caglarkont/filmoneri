@@ -1,0 +1,116 @@
+{% extends "sablon.html" %} {% block icerik %}
+
+<div class="container center">
+  <div class="w3-content w3-display-container">
+    <div class="w3-display-container mySlides">
+      <img src="static/img/f5.jpg" style="width:50%" />
+      <div
+        class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black"
+      >
+        Müslüm
+      </div>
+    </div>
+
+    <div class="w3-display-container mySlides">
+      <img src="static/img/f4.jpg" style="width:50%" />
+      <div
+        class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black"
+      >
+        Organize İşler 2
+      </div>
+    </div>
+
+    <div class="w3-display-container mySlides">
+      <img src="static/img/f3.jpg" style="width:50%" />
+      <div
+        class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black"
+      >
+        Başlangıç
+      </div>
+    </div>
+
+    <div class="w3-display-container mySlides">
+      <img src="static/img/f2.jpg" style="width:50%" />
+      <div
+        class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black"
+      >
+        Joker
+      </div>
+    </div>
+
+    <div class="w3-display-container mySlides">
+      <img src="static/img/f1.jpeg" style="width:50%" />
+      <div
+        class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black"
+      >
+        7. Koğuştaki Mucize
+      </div>
+    </div>
+
+    <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">
+      &#10094;
+    </button>
+    <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">
+      &#10095;
+    </button>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<div class="w3-container w3-red center">
+  <h1>Güncel İstek Listesi</h1>
+</div>
+<div class="container">
+  <div class="w3-container">
+    <table>
+      <thead>
+        <tr class="w3-light-grey w3-hover-red">
+          <th scope="col">Film Yılı</th>
+          <th scope="col">Film İsim</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="w3-hover-black">
+          <th>2005</th>
+          <td>Babam ve Oğlum</td>
+        </tr>
+        <tr class="w3-hover-green">
+          <th>2005</th>
+          <td>Babam ve Oğlum</td>
+        </tr>
+        <tr class="w3-hover-blue">
+          <th>2005</th>
+          <td>Babam ve Oğlum</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs((slideIndex += n));
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = x.length;
+    }
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    x[slideIndex - 1].style.display = "block";
+  }
+</script>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="js/materialize.min.js"></script>
+{% endblock %}
